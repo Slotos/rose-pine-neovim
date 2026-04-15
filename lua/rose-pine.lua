@@ -1218,9 +1218,9 @@ local function set_highlights()
 	end
 end
 
----@param variant Variant | nil
-function M.colorscheme(variant)
-	config.extend_options({ variant = variant })
+---@param dark_variant DarkVariant | nil
+function M.colorscheme(dark_variant)
+	config.extend_options({ dark_variant = dark_variant })
 
 	vim.opt.termguicolors = true
 	if vim.g.colors_name then
@@ -1228,12 +1228,6 @@ function M.colorscheme(variant)
 		vim.cmd("syntax reset")
 	end
 	vim.g.colors_name = "rose-pine"
-
-	if variant == "dawn" then
-		vim.o.background = "light"
-	elseif variant == "main" or variant == "moon" then
-		vim.o.background = "dark"
-	end
 
 	set_highlights()
 end

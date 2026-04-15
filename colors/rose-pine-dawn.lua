@@ -1,2 +1,3 @@
+vim.opt.background="light"
 package.loaded["rose-pine.palette"] = nil
-require("rose-pine").colorscheme("dawn")
+require("rose-pine").colorscheme()
